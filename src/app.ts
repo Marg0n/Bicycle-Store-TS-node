@@ -8,7 +8,18 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World!');
+  try {
+    res.send({
+      status: true,
+      message: 'Server is running! ⚡',
+    });
+  } 
+  catch (err: any) {
+    res.send({
+      status: false,
+      message: err || 'Something went wrong!',
+    });
+  }
 });
 
 export default app;

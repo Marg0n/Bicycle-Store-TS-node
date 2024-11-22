@@ -312,7 +312,7 @@
   ```json
   "scripts": {
     "start:prod": "node ./dist/server.js",
-    "start:dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
   }
   ```
 
