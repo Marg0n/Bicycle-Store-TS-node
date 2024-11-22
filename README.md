@@ -1,21 +1,23 @@
-# 🚲 Bicycle Store
+<h1 align="center">
+  🚲 Bicycle Store  
+</h1>
 
 ## :memo: Objective:
 
-Developing an Express application with TypeScript, integrating MongoDB with Mongoose to manage a Bicycle Store. Ensure data integrity using Mongoose schema validation.
+  Developing an Express application with TypeScript, integrating MongoDB with Mongoose to manage a Bicycle Store. Ensure data integrity using Mongoose schema validation.
 
 ## 🛠 Technology Used:
 
-- Backend Development:
+  - Backend Development:
 
-  - Node.js
-  - Express.js
-  - Mongoose
-  - TypeScript
+    - Node.js
+    - Express.js
+    - Mongoose
+    - TypeScript
 
 ## 🌐 Live Preview
 
-[Bicycle-Store]()
+  [Bicycle-Store]()
 
 ---
 
@@ -354,7 +356,7 @@ Developing an Express application with TypeScript, integrating MongoDB with Mong
 
 - Run the following command to deploy:
 
-  - to login
+  - To login
 
     ```bash
     npx vercel login
@@ -367,3 +369,7 @@ Developing an Express application with TypeScript, integrating MongoDB with Mong
     ```bash
     npx vercel --prod
     ```
+
+---
+
+✅ That' all the steps that are required to initialize the project. Thanks for the reading.
