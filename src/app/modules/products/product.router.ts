@@ -5,5 +5,6 @@ const productRouter = Router();
 
 productRouter.post('/products', productController.createProduct);
 productRouter.get('/products', productController.getProduct);
+productRouter.get('/products/:productId', productController.getOneProduct);
 
 export default productRouter;

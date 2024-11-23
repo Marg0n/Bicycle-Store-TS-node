@@ -33,7 +33,28 @@ const getProduct = async (req: Request, res: Response) => {
     const result = await productService.getProduct();
 
     res.status(200).send({
-      message: 'Bicycle retrieved  successful! ',
+      message: 'Bicycle retrieved successful! ',
+      success: true,
+      data: result,
+    });
+  } catch (err: any) {
+    // console.log(err);
+    res.status(500).send({
+      message: 'Something went wrong while retrieving Product!',
+      success: false,
+      error: err.errors,
+      stack: err.stack,
+    });
+  }
+};
+
+// get a products
+const getOneProduct = async (req: Request, res: Response) => {
+  try {
+    const result = await productService.getOneProduct();
+
+    res.status(200).send({
+      message: 'Bicycle retrieved successful! ',
       success: true,
       data: result,
     });
@@ -51,4 +72,5 @@ const getProduct = async (req: Request, res: Response) => {
 export const productController = {
   createProduct,
   getProduct,
+  getOneProduct,
 };
