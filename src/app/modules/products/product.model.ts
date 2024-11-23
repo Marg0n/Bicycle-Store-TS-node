@@ -1,6 +1,7 @@
 import { model, Schema } from "mongoose";
+import { IProduct } from "./product.interface";
 
-const productSchema = new Schema({
+const productSchema = new Schema<IProduct>({
     name: {
         type: String,
         trim: true,
@@ -31,9 +32,18 @@ const productSchema = new Schema({
     },
     inStock: {
         type: Boolean,
-        enum: {values:[true, false], message: 'Please provide in stock is true or false.'},
-        required: [true, 'Please provide in stock information.'],
+        required: [true, 'Please provide in stock is true or false.'],
     },
+})
+
+// pre save middleware / hooks
+productSchema.pre('save', function(){
+    console.log(this,'--pre save!--')
+})
+
+// post save middleware / hooks
+productSchema.post('save', function(){
+    console.log(this,'--post save!--')
 })
 
 const product = model("Product", productSchema);

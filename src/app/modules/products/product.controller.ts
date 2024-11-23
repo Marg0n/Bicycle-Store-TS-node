@@ -2,13 +2,14 @@
 
 import { Request, Response } from 'express';
 import product from './product.model';
+import { productService } from './product.service';
 
 //  create a new product
 const createProduct = async (req: Request, res: Response) => {
   try {
     const productData = await req.body;
 
-    const result = await product.create(productData);
+    const result = await productService.createProduct(productData);
 
     res.status(200).send({
       success: true,
