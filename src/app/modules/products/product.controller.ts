@@ -16,11 +16,10 @@ const createProduct = async (req: Request, res: Response) => {
       success: true,
       data: result,
     });
-  } 
-  catch (err: any) {
+  } catch (err: any) {
     // console.log(err);
     res.status(500).send({
-      message: 'Something went wrong while creating Product! Validation failed!',
+      message: 'Something went wrong with Validation while creating Product!',
       success: false,
       error: err,
       stack: err.stack,
@@ -31,17 +30,14 @@ const createProduct = async (req: Request, res: Response) => {
 // get all products
 const getProduct = async (req: Request, res: Response) => {
   try {
-    const productData = await req.body;
-
-    const result = await product.create(productData);
+    const result = await productService.getProduct();
 
     res.status(200).send({
-      message: "Bicycle retrieved  successful! ",
+      message: 'Bicycle retrieved  successful! ',
       success: true,
       data: result,
     });
-  } 
-  catch (err: any) {
+  } catch (err: any) {
     // console.log(err);
     res.status(500).send({
       message: 'Something went wrong while retrieving Product!',
