@@ -30,7 +30,9 @@ const createProduct = async (req: Request, res: Response) => {
 // get all products
 const getProduct = async (req: Request, res: Response) => {
   try {
-    const result = await productService.getProduct();
+    const searchTerm = req?.query;
+
+    const result = await productService.getProduct(searchTerm);
 
     res.status(200).send({
       message: 'Bicycle retrieved successful! ',

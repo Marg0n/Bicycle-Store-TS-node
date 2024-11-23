@@ -10,10 +10,14 @@ const createProduct = async function(productData: IProduct): Promise<IProduct> {
 }
 
 // get products
-const getProduct = async function() {
-    
-    const result = await product.find();
-
+const getProduct = async function(searchTerm: any) {
+    const filter: any = {};
+    if (searchTerm) {
+        for (const key in searchTerm) {
+            filter[key] = { $regex: new RegExp(searchTerm[key], 'i') };
+        }
+    }
+    const result = await product.find(filter);
     return result;
 }
 

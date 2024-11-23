@@ -56,8 +56,8 @@ const productSchema = new Schema<IProduct>(
   },
 );
 
-// pre save middleware / hooks
-productSchema.pre('save', function (next) {
+// pre find middleware / hooks
+productSchema.pre('find', function (next) {
   // console.log(this,'--pre save!--')
   next();
 });
