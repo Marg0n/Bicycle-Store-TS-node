@@ -36,7 +36,7 @@ const updateProduct = async function(id: string, productData: IProduct) {
 // delete a products
 const deleteProduct = async function(id: string) {
     
-    const result = await product.findByIdAndDelete(id);
+    const result = await product.findByIdAndDelete(id, {new: true});
 
     return result;
 }

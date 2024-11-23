@@ -98,12 +98,14 @@ const updateProduct = async (req: Request, res: Response) => {
 // delete a products
 const deleteProduct = async (req: Request, res: Response) => {
   try {
-    const result = await productService.deleteProduct();
+    const productId = await req.params.productId;
+
+    await productService.deleteProduct(productId);
 
     res.status(200).send({
       message: 'Bicycle deleted successful! ',
       success: true,
-      data: result,
+      data: {},
     });
   } catch (err: any) {
     // console.log(err);
