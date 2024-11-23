@@ -3,27 +3,36 @@ import { model, Schema } from "mongoose";
 const productSchema = new Schema({
     name: {
         type: String,
-        required: true,
+        trim: true,
+        unique: true,
+        minlength: 2,
+        MaxLength:40,
+        required: [true, 'Please provide a unique model name.'],
     },
     brand: {
         type: String,
-        required: true,
+        trim: true,
+        required: [true, 'Please provide a brand name.'],
     },
     type: {
         type: String,
-        required: true,
+        trim: true,
+        enum: {values:['Mountain', 'Road', 'Hybrid', 'BMX', 'Electric'],message: '{VALUE} is not valid. Please provide a valid type.'},
+        required: [true, 'Please provide a valid type'],
     },
     description: {
         type: String,
-        required: true,
+        trim: true,
+        required: [true, 'Please provide description.'],
     },
     quantity: {
         type: Number,
-        required: true,
+        required: [true, 'Please provide exact quantity.'],
     },
     inStock: {
         type: Boolean,
-        required: true,
+        enum: {values:[true, false], message: 'Please provide in stock is true or false.'},
+        required: [true, 'Please provide in stock information.'],
     },
 })
 
