@@ -46,6 +46,6 @@ productSchema.post('save', function(){
     console.log(this,'--post save!--')
 })
 
-const product = model("Product", productSchema);
+const product = model<IProduct>("Product", productSchema);
 
 export default product;
