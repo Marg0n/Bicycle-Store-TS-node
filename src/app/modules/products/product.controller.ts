@@ -51,7 +51,9 @@ const getProduct = async (req: Request, res: Response) => {
 // get a products
 const getOneProduct = async (req: Request, res: Response) => {
   try {
-    const result = await productService.getOneProduct();
+    const productId = await req.params.productId;
+
+    const result = await productService.getOneProduct(productId);
 
     res.status(200).send({
       message: 'Bicycle retrieved successful! ',
@@ -69,8 +71,52 @@ const getOneProduct = async (req: Request, res: Response) => {
   }
 };
 
+// update a products
+const updateProduct = async (req: Request, res: Response) => {
+  try {
+    const result = await productService.updateProduct();
+
+    res.status(200).send({
+      message: 'Bicycle updated successful! ',
+      success: true,
+      data: result,
+    });
+  } catch (err: any) {
+    // console.log(err);
+    res.status(500).send({
+      message: 'Something went wrong while updating Product!',
+      success: false,
+      error: err.errors,
+      stack: err.stack,
+    });
+  }
+};
+
+// delete a products
+const deleteProduct = async (req: Request, res: Response) => {
+  try {
+    const result = await productService.deleteProduct();
+
+    res.status(200).send({
+      message: 'Bicycle deleted successful! ',
+      success: true,
+      data: result,
+    });
+  } catch (err: any) {
+    // console.log(err);
+    res.status(500).send({
+      message: 'Something went wrong while deleting Product!',
+      success: false,
+      error: err.errors,
+      stack: err.stack,
+    });
+  }
+};
+
 export const productController = {
   createProduct,
   getProduct,
   getOneProduct,
+  updateProduct,
+  deleteProduct,
 };
