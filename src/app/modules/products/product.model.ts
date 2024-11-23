@@ -16,6 +16,10 @@ const productSchema = new Schema<IProduct>(
       trim: true,
       required: [true, 'Please provide a brand name.'],
     },
+    price: {
+        type: Number,
+        required: [true, 'Please provide exact price.'],
+      },
     type: {
       type: String,
       trim: true,

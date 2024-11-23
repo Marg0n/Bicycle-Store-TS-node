@@ -74,7 +74,10 @@ const getOneProduct = async (req: Request, res: Response) => {
 // update a products
 const updateProduct = async (req: Request, res: Response) => {
   try {
-    const result = await productService.updateProduct();
+    const productData = await req.body;
+    const productId = await req.params.productId;
+
+    const result = await productService.updateProduct(productId, productData);
 
     res.status(200).send({
       message: 'Bicycle updated successful! ',
