@@ -12,8 +12,8 @@ const createProduct = async (req: Request, res: Response) => {
     const result = await productService.createProduct(productData);
 
     res.status(200).send({
+      message: 'Bicycle created successfully!',
       success: true,
-      message: 'Product created successfully!',
       data: result,
     });
   } 
@@ -36,7 +36,7 @@ const getProduct = async (req: Request, res: Response) => {
     const result = await product.create(productData);
 
     res.status(200).send({
-      message: "Bicycle getting info successful! ",
+      message: "Bicycle retrieved  successful! ",
       success: true,
       data: result,
     });
@@ -44,7 +44,7 @@ const getProduct = async (req: Request, res: Response) => {
   catch (err: any) {
     // console.log(err);
     res.status(500).send({
-      message: 'Something went wrong while getting Product!',
+      message: 'Something went wrong while retrieving Product!',
       success: false,
       error: err.errors,
       stack: err.stack,

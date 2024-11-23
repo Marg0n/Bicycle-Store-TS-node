@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 // middleware
-app.use('/api/v1/product', productRouter)
+app.use('/api', productRouter)
 
 app.get('/', (req: Request, res: Response) => {
   try {
