@@ -1,12 +1,27 @@
-export interface IOrder {
-  email: string;
-  product: string;
-  quantity: number;
-  totalPrice: number;
-}
+import { model, Schema } from "mongoose";
+import { IOrder } from "./order.interface";
 
-// Order Model:
-// email (string): The email address of the customer.
-// product (ObjectId): The bicycle ordered. (unused ref)
-// quantity (number): The quantity of the ordered bicycle.
-// totalPrice (number): The total price (bicycle price * quantity).
+const orderSchema = new Schema<IOrder>({
+    email: {
+        type: String,
+        trim: true,
+        required: [true, 'Please provide a valid email.'],
+    },
+    product: {
+        type: String,
+        trim: true,
+        required: [true, 'Please provide a product id.'],
+    },
+    quantity: {
+        type: Number,
+        required: [true, 'Please provide exact quantity.'],
+      },
+    totalPrice: {
+        type: Number,
+        required: [true, 'Please provide total price.'],
+      },
+  })
+
+  const order = model<IOrder>('Order', orderSchema);
+  
+  export default order;
