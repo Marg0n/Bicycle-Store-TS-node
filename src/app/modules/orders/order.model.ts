@@ -1,5 +1,9 @@
-
-
+export interface IOrder {
+  email: string;
+  product: string;
+  quantity: number;
+  totalPrice: number;
+}
 
 // Order Model:
 // email (string): The email address of the customer.
