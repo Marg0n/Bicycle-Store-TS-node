@@ -13,7 +13,8 @@ const orderProduct = async (req: Request, res: Response) => {
       success: true,
       data: result,
     });
-  } catch (err: any) {
+  } 
+  catch (err: any) {
     if (err.message === 'Insufficient stock') {
       res.status(400).send({
         message: 'Insufficient stock for the product!',
@@ -23,7 +24,7 @@ const orderProduct = async (req: Request, res: Response) => {
       });
     } else {
       res.status(500).send({
-        message: 'Something went wrong with Validation while creating Product!',
+        message: 'Something went wrong with Validation while creating Product Order!',
         success: false,
         error: err.message || err,
         stack: err.stack,
@@ -32,6 +33,28 @@ const orderProduct = async (req: Request, res: Response) => {
   }
 };
 
+// Calculate total revenue
+const getRevenue = async (req: Request, res: Response) => {
+  try {
+    const totalRevenue = await orderService.calculateRevenue();
+
+    res.status(200).send({
+      message: 'Revenue calculated successfully',
+      success: true,
+      data: { totalRevenue }
+    });
+  } 
+  catch (err: any) {
+    res.status(500).send({
+      message: 'Something went wrong while calculating revenue!',
+      success: false,
+      error: err.message || err,
+      stack: err.stack
+    });
+  }
+};
+
 export const orderController = {
   orderProduct,
+  getRevenue,
 };

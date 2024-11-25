@@ -35,6 +35,24 @@ const orderCycle = async function (orderData: IOrder): Promise<IOrder> {
   return result;
 };
 
+// calculate the total revenue
+const calculateRevenue = async function () {
+  const result = await order.aggregate([
+    {
+      $group: {
+        _id: null,
+        totalRevenue: { $sum: { $multiply: ['$totalPrice', '$quantity'] } },
+      },
+    },
+  ]);
+
+  // If no orders found, return zero revenue
+  const totalRevenue = result.length ? result[0].totalRevenue : 0;
+
+  return totalRevenue;
+};
+
 export const orderService = {
   orderCycle,
+  calculateRevenue,
 };
