@@ -58,18 +58,6 @@ const productSchema = new Schema<IProduct>(
   },
 );
 
-// pre find middleware / hooks
-productSchema.pre('find', function (next) {
-  // console.log(this,'--pre save!--')
-  next();
-});
-
-// post save middleware / hooks
-productSchema.post('save', function (doc, next) {
-  // console.log(doc,'--post save!--')
-  next();
-});
-
 // Middleware to update 'updatedAt' field before updating a document 
 productSchema.pre('findOneAndUpdate', function(next) { 
   this.set({ 
