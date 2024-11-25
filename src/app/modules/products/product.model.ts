@@ -44,13 +44,11 @@ const productSchema = new Schema<IProduct>(
     },
     createdAt: {
       type: String,
-      // default: new Date(),
-      default: Date.now,
+      default: new Date(),
     },
     updatedAt: {
       type: String,
-      // default: new Date(),
-      default: Date.now,
+      default: new Date(),
     },
   },
   {
