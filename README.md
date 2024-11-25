@@ -413,8 +413,8 @@
       "description": "A premium road bike designed for speed and performance.",
       "quantity": 20,
       "inStock": true,
-      "createdAt": "2024-11-19T10:23:45.123Z",
-      "updatedAt": "2024-11-19T10:23:45.123Z"
+      "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
+      "updatedAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)"
     }
   }
   ```
@@ -442,8 +442,8 @@
         "description": "A premium road bike designed for speed and performance.",
         "quantity": 20,
         "inStock": true,
-        "createdAt": "2024-11-19T10:23:45.123Z",
-        "updatedAt": "2024-11-19T10:23:45.123Z"
+        "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
+        "updatedAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)"
       }
     ]
   }
@@ -470,8 +470,8 @@
       "description": "A premium road bike designed for speed and performance.",
       "quantity": 20,
       "inStock": true,
-      "createdAt": "2024-11-19T10:23:45.123Z",
-      "updatedAt": "2024-11-19T10:23:45.123Z"
+      "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
+      "updatedAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)"
     }
   }
   ```
@@ -506,8 +506,8 @@
       "description": "A premium road bike designed for speed and performance.",
       "quantity": 15, // Quantity updated
       "inStock": true,
-      "createdAt": "2024-11-19T10:23:45.123Z",
-      "updatedAt": "2024-11-19T11:00:00.000Z" // Updated timestamp
+      "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
+      "updatedAt": "Mon Nov 25 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)" // Updated timestamp
     }
   }
   ```
@@ -561,8 +561,8 @@
       "product": "648a45e5f0123c45678d9012",
       "quantity": 2,
       "totalPrice": 600,
-      "createdAt": "2024-11-19T12:00:00.000Z",
-      "updatedAt": "2024-11-19T12:00:00.000Z"
+      "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
+      "updatedAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)"
     }
   }
   ```
