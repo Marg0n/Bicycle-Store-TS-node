@@ -3,4 +3,6 @@ export interface IOrder {
   product: string;
   quantity: number;
   totalPrice: number;
+  createdAt?: string | null;
+  updatedAt?: string | null;
 }

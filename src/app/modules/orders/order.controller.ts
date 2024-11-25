@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
-import { orderService } from "./order.service";
+import { Request, Response } from 'express';
+import { orderService } from './order.service';
 
 //  create a new order
 const orderProduct = async (req: Request, res: Response) => {
@@ -14,16 +14,24 @@ const orderProduct = async (req: Request, res: Response) => {
       data: result,
     });
   } catch (err: any) {
-    // console.log(err);
-    res.status(500).send({
-      message: 'Something went wrong with Validation while creating Product!',
-      success: false,
-      error: err,
-      stack: err.stack,
-    });
+    if (err.message === 'Insufficient stock') {
+      res.status(400).send({
+        message: 'Insufficient stock for the product!',
+        success: false,
+        error: err.message,
+        stack: err.stack,
+      });
+    } else {
+      res.status(500).send({
+        message: 'Something went wrong with Validation while creating Product!',
+        success: false,
+        error: err.message || err,
+        stack: err.stack,
+      });
+    }
   }
 };
 
 export const orderController = {
-    orderProduct,
-  };
+  orderProduct,
+};
