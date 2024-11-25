@@ -372,7 +372,7 @@
 
 ---
 
-✅ That' all the steps that are required to initialize the project. Thanks for the reading.
+✅ That' all the steps that are required to initialize the project.
 
 ---
 
