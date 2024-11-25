@@ -386,53 +386,25 @@
   - **Method:** `POST`
   - **Request Body:**
 
-  ```json
-  {
-    "name": "Roadster 5000",
-    "brand": "SpeedX",
-    "price": 300,
-    "type": "Road",
-    "description": "A premium road bike designed for speed and performance.",
-    "quantity": 20,
-    "inStock": true
-  }
-  ```
-
-  - **Response:** Success message and created bicycle details.
-
-  ```json
-  {
-    "message": "Bicycle created successfully",
-    "success": true,
-    "data": {
-      "_id": "648a45e5f0123c45678d9012",
+    ```json
+    {
       "name": "Roadster 5000",
       "brand": "SpeedX",
       "price": 300,
       "type": "Road",
       "description": "A premium road bike designed for speed and performance.",
       "quantity": 20,
-      "inStock": true,
-      "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
-      "updatedAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)"
+      "inStock": true
     }
-  }
-  ```
+    ```
 
+  - **Response:** Success message and created bicycle details.
 
-### **2. Get All Bicycles**
-
-  - **Endpoint:** **`/api/products`**
-  - **Method:** `GET`
-  - **Response:** A list of all bicycles with details like name, brand, price, type, etc.
-  - **Query:** `/api/products?searchTerm=type` (`searchTerm` can be `name`, `brand`, `type`)
-
-  ```json
-  {
-    "message": "Bicycles retrieved successfully",
-    "status": true,
-    "data": [
-      {
+    ```json
+    {
+      "message": "Bicycle created successfully",
+      "success": true,
+      "data": {
         "_id": "648a45e5f0123c45678d9012",
         "name": "Roadster 5000",
         "brand": "SpeedX",
@@ -444,9 +416,37 @@
         "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
         "updatedAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)"
       }
-    ]
-  }
-  ```
+    }
+    ```
+
+
+### **2. Get All Bicycles**
+
+  - **Endpoint:** **`/api/products`**
+  - **Method:** `GET`
+  - **Response:** A list of all bicycles with details like name, brand, price, type, etc.
+  - **Query:** `/api/products?searchTerm=type` (`searchTerm` can be `name`, `brand`, `type`)
+
+    ```json
+    {
+      "message": "Bicycles retrieved successfully",
+      "status": true,
+      "data": [
+        {
+          "_id": "648a45e5f0123c45678d9012",
+          "name": "Roadster 5000",
+          "brand": "SpeedX",
+          "price": 300,
+          "type": "Road",
+          "description": "A premium road bike designed for speed and performance.",
+          "quantity": 20,
+          "inStock": true,
+          "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
+          "updatedAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)"
+        }
+      ]
+    }
+    ```
 
 
 ### **3. Get a Specific Bicycle**
@@ -455,24 +455,24 @@
   - **Method:** `GET`
   - **Response:** The details of a specific bicycle by ID.
 
-  ```json
-  {
-    "message": "Bicycle retrieved successfully",
-    "status": true,
-    "data": {
-      "_id": "648a45e5f0123c45678d9012",
-      "name": "Roadster 5000",
-      "brand": "SpeedX",
-      "price": 300,
-      "type": "Road",
-      "description": "A premium road bike designed for speed and performance.",
-      "quantity": 20,
-      "inStock": true,
-      "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
-      "updatedAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)"
+    ```json
+    {
+      "message": "Bicycle retrieved successfully",
+      "status": true,
+      "data": {
+        "_id": "648a45e5f0123c45678d9012",
+        "name": "Roadster 5000",
+        "brand": "SpeedX",
+        "price": 300,
+        "type": "Road",
+        "description": "A premium road bike designed for speed and performance.",
+        "quantity": 20,
+        "inStock": true,
+        "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
+        "updatedAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)"
+      }
     }
-  }
-  ```
+    ```
 
 
 ### **4. Update a Bicycle**
@@ -481,33 +481,33 @@
   - **Method:** `PUT`
   - **Request Body:** (Bicycle details to update)
 
-  ```json
-  {
-    "price": 350,
-    "quantity": 15
-  }
-  ```
+    ```json
+    {
+      "price": 350,
+      "quantity": 15
+    }
+    ```
 
   - **Response:** Success message and updated bicycle details.
 
-  ```json
-  {
-    "message": "Bicycle updated successfully",
-    "status": true,
-    "data": {
-      "_id": "648a45e5f0123c45678d9012",
-      "name": "Roadster 5000",
-      "brand": "SpeedX",
-      "price": 350, // Price updated
-      "type": "Road",
-      "description": "A premium road bike designed for speed and performance.",
-      "quantity": 15, // Quantity updated
-      "inStock": true,
-      "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
-      "updatedAt": "Mon Nov 25 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)" // Updated timestamp
+    ```json
+    {
+      "message": "Bicycle updated successfully",
+      "status": true,
+      "data": {
+        "_id": "648a45e5f0123c45678d9012",
+        "name": "Roadster 5000",
+        "brand": "SpeedX",
+        "price": 350, // Price updated
+        "type": "Road",
+        "description": "A premium road bike designed for speed and performance.",
+        "quantity": 15, // Quantity updated
+        "inStock": true,
+        "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
+        "updatedAt": "Mon Nov 25 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)" // Updated timestamp
+      }
     }
-  }
-  ```
+    ```
 
 
 ### **5. Delete a Bicycle**
@@ -516,13 +516,13 @@
   - **Method:** `DELETE`
   - **Response:** Success message confirming the bicycle has been deleted.
 
-  ```json
-  {
-    "message": "Bicycle deleted successfully",
-    "status": true,
-    "data": {}
-  }
-  ```
+    ```json
+    {
+      "message": "Bicycle deleted successfully",
+      "status": true,
+      "data": {}
+    }
+    ```
 
 
 ### **6. Order a Bicycle**
@@ -535,32 +535,32 @@
     - Handle **insufficient stock** cases by returning an appropriate error message.
   - **Request Body:**
 
-  ```json
-  {
-    "email": "customer@example.com",
-    "product": "648a45e5f0123c45678d9012",
-    "quantity": 2,
-    "totalPrice": 600
-  }
-  ```
-
-  - **Response:** Success message confirming the order.
-
-  ```json
-  {
-    "message": "Order created successfully",
-    "status": true,
-    "data": {
-      "_id": "648b45f5e1234b56789a6789",
+    ```json
+    {
       "email": "customer@example.com",
       "product": "648a45e5f0123c45678d9012",
       "quantity": 2,
-      "totalPrice": 600,
-      "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
-      "updatedAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)"
+      "totalPrice": 600
     }
-  }
-  ```
+    ```
+
+  - **Response:** Success message confirming the order.
+
+    ```json
+    {
+      "message": "Order created successfully",
+      "status": true,
+      "data": {
+        "_id": "648b45f5e1234b56789a6789",
+        "email": "customer@example.com",
+        "product": "648a45e5f0123c45678d9012",
+        "quantity": 2,
+        "totalPrice": 600,
+        "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
+        "updatedAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)"
+      }
+    }
+    ```
 
 
 ### **7. Calculate Revenue from Orders (Aggregation)**
@@ -572,15 +572,15 @@
     - Calculate the total price by multiplying the price of each bicycle by the quantity ordered.
   - **Response:** The total revenue from all orders.
 
-  ```json
-  {
-    "message": "Revenue calculated successfully",
-    "status": true,
-    "data": {
-      "totalRevenue": 1200 // Total revenue calculated from all orders
+    ```json
+    {
+      "message": "Revenue calculated successfully",
+      "status": true,
+      "data": {
+        "totalRevenue": 1200 // Total revenue calculated from all orders
+      }
     }
-  }
-  ```
+    ```
 
 ---
 
