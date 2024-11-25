@@ -45,10 +45,12 @@ const productSchema = new Schema<IProduct>(
     createdAt: {
       type: String,
       default: new Date(),
+      // default: Date.now,
     },
     updatedAt: {
       type: String,
       default: new Date(),
+      // default: Date.now,
     },
   },
   {
@@ -65,6 +67,18 @@ productSchema.pre('find', function (next) {
 // post save middleware / hooks
 productSchema.post('save', function (doc, next) {
   // console.log(doc,'--post save!--')
+  next();
+});
+
+// Middleware to update `updatedAt` before saving
+productSchema.pre('save', function (next) {
+  this.updatedAt = new Date();
+  next();
+});
+
+// Middleware to update `updatedAt` before updating
+productSchema.pre('findOneAndUpdate', function (next) {
+  this._update.updatedAt = new Date();
   next();
 });
 
