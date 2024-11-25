@@ -15,9 +15,9 @@
     - Mongoose
     - TypeScript
 
-## 🌐 Live Preview
+## 🌐 Live server Preview
 
-  [Bicycle-Store]()
+  [Bicycle-Store](https://bicycle-store-ts-node.vercel.app/)
 
 ---
 
