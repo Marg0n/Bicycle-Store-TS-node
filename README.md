@@ -419,7 +419,6 @@
   }
   ```
 
----
 
 ### **2. Get All Bicycles**
 
@@ -449,7 +448,6 @@
   }
   ```
 
----
 
 ### **3. Get a Specific Bicycle**
 
@@ -476,7 +474,6 @@
   }
   ```
 
----
 
 ### **4. Update a Bicycle**
 
@@ -512,7 +509,6 @@
   }
   ```
 
----
 
 ### **5. Delete a Bicycle**
 
@@ -528,7 +524,6 @@
   }
   ```
 
----
 
 ### **6. Order a Bicycle**
 
@@ -567,7 +562,6 @@
   }
   ```
 
----
 
 ### **7. Calculate Revenue from Orders (Aggregation)**
 
