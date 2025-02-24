@@ -25,8 +25,8 @@ userRouter.post(
   userController.registerUser,
 );
 userRouter.get(
-  '/users',
-  validateRequest(userValidations.userValidationSchema),
+  '/',
+  // validateRequest(userValidations.userValidationSchema),
   userController.getUser,
 );
 

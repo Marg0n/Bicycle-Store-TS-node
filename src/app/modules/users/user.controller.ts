@@ -31,10 +31,9 @@ const getUser = catchAsync(async function (req, res) {
 
     res.status(HttpStatus.OK).json({
       success: true,
-      message: 'Login successful',
+      message: 'User fetch successful',
       statusCode: HttpStatus.OK,
       data: {
-        token: 'token',
         user: user,
       },
     });

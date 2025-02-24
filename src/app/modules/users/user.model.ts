@@ -1,7 +1,7 @@
-import { model, Schema } from 'mongoose';
-import { IUser } from './user.interface';
 import bycript from 'bcrypt';
+import { model, Schema } from 'mongoose';
 import config from '../../config';
+import { IUser } from './user.interface';
 
 const userSchema = new Schema<IUser>(
   {
@@ -26,7 +26,7 @@ const userSchema = new Schema<IUser>(
     password: {
       type: String,
       trim: true,
-      selected: false, // password field will not be returned in response
+      select: false, // password field will not be returned in response
       required: [true, 'Please provide a password.'],
     },
     role: {
@@ -70,7 +70,6 @@ userSchema.pre<IUser>('save', async function (next) {
 
 // password field empty
 userSchema.post('save', function (doc, next) {
-  
   doc.password = '';
 
   next();
