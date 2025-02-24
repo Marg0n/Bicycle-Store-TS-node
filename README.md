@@ -354,6 +354,12 @@
   }
   ```
 
+- Add [zod](https://zod.dev/?id=installation)
+
+  ```bash
+  npm install zod 
+  ```
+
 - Add [http-status-codes](https://www.npmjs.com/package/http-status-codes) for the HTTP status codes
 
   ```bash

@@ -5,6 +5,7 @@ import productRouter from './app/modules/products/product.router';
 import orderRouter from './app/modules/orders/order.router';
 import HttpStatus from 'http-status-codes';
 import notFound from './app/middleware/notFound';
+import globalErrorHandler from './app/middleware/globalErrorHandler';
 const app: Application = express();
 
 // parsers
@@ -33,6 +34,9 @@ app.get('/', (req: Request, res: Response) => {
   }
 });
 
+// global error handler
+app.use(globalErrorHandler);
+
 // route not found
 app.use('*', (req: Request, res: Response) => {
   res.status(HttpStatus.FORBIDDEN).send({
@@ -42,7 +46,7 @@ app.use('*', (req: Request, res: Response) => {
   });
 });
 
-// not found
+// api not found
 app.use(notFound);
 
 export default app;
