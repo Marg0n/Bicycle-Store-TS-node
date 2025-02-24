@@ -5,7 +5,7 @@ import jwt, { JwtPayload } from 'jsonwebtoken';
 import config from '../config';
 import User from '../modules/users/user.model';
 
-const auth = (requiredRole: string) => {
+const auth = (...requiredRole: string[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     
     const token = req.headers.authorization;
@@ -31,7 +31,7 @@ const auth = (requiredRole: string) => {
       });
     }
 
-    if(requiredRole !== role) {
+    if(requiredRole && !requiredRole.includes(role)) {
       res.status(HttpStatus.UNAUTHORIZED).json({
         success: false,
         message: 'Unauthorized user',
