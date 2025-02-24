@@ -380,6 +380,16 @@
   npm i --save-dev @types/jsonwebtoken
   ```
   
+- Add [cookie-parser]() for parse cookies
+
+  ```bash
+  npm i cookie-parser
+  ```
+  
+  ```bash
+  npm i --save-dev @types/cookie-parser
+  ```
+  
 
 - Add [http-status-codes](https://www.npmjs.com/package/http-status-codes) for the HTTP status codes
 
