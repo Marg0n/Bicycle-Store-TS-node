@@ -3,6 +3,8 @@ import cors from 'cors';
 import express, { Application, Request, Response } from 'express';
 import productRouter from './app/modules/products/product.router';
 import orderRouter from './app/modules/orders/order.router';
+import HttpStatus from 'http-status-codes';
+import notFound from './app/middleware/notFound';
 const app: Application = express();
 
 // parsers
@@ -30,5 +32,17 @@ app.get('/', (req: Request, res: Response) => {
     });
   }
 });
+
+// route not found
+app.use('*', (req: Request, res: Response) => {
+  res.status(HttpStatus.FORBIDDEN).send({
+    success: false,
+    message: 'Route not found!',
+    status: HttpStatus.FORBIDDEN,
+  });
+});
+
+// not found
+app.use(notFound);
 
 export default app;
