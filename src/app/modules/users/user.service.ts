@@ -18,7 +18,16 @@ const getUser = async () => {
     return result;
 }
 
+// Create an admin user
+const createAdmin = async (admin: IUser): Promise<IUser> => {
+
+    admin.role = 'admin';
+    const result = await User.create(admin);
+    return result;
+}
+
 export const userService = {
     registerUser,
     getUser,
+    createAdmin,
 };
