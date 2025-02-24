@@ -48,7 +48,8 @@ const globalErrorHandler = (
   else if (err.code && err.code === 11000) {
     res.status(err.statusCode || HttpStatus.BAD_REQUEST).json({
       success: false,
-      message: err.errorResponse.errmsg,
+      // message: err.errorResponse.errmsg || "Email is already in use!",
+      message: "Email is already being used!",
       statusCode: err.statusCode || HttpStatus.BAD_REQUEST, // or other relevant HTTP status code
       error: err,
       stack: err.stack,

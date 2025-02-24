@@ -360,6 +360,17 @@
   npm install zod 
   ```
 
+- Add [bcrypt](https://www.npmjs.com/package/bcrypt)
+
+  ```bash
+  npm i bcrypt 
+  ```
+  
+  ```bash
+  npm i @types/bcrypt
+  ```
+  
+
 - Add [http-status-codes](https://www.npmjs.com/package/http-status-codes) for the HTTP status codes
 
   ```bash
@@ -715,7 +726,7 @@
               ```json
               {
                 "success": false,
-                "message": "Validation error",
+                "message": "Email is already being used!",
                 "statusCode": 400,
                 "error": { "details" },
                 "stack": "error stack"

@@ -1,11 +1,10 @@
 // const express = require("express");
 import cors from 'cors';
 import express, { Application, Request, Response } from 'express';
-import productRouter from './app/modules/products/product.router';
-import orderRouter from './app/modules/orders/order.router';
 import HttpStatus from 'http-status-codes';
-import notFound from './app/middleware/notFound';
 import globalErrorHandler from './app/middleware/globalErrorHandler';
+import notFound from './app/middleware/notFound';
+import router from './app/routes';
 const app: Application = express();
 
 // parsers
@@ -13,9 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 // middleware
-app.use('/api/products', productRouter)
-app.use('/api/orders', orderRouter);
-
+app.use('/api', router);
 
 app.get('/', (req: Request, res: Response) => {
   try {
@@ -23,8 +20,7 @@ app.get('/', (req: Request, res: Response) => {
       success: true,
       message: 'Server is running! ⚡',
     });
-  } 
-  catch (err: any) {
+  } catch (err: any) {
     res.status(500).send({
       message: err.message || 'Something went wrong!',
       success: false,

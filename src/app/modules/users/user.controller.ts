@@ -29,7 +29,7 @@ const getUser = catchAsync(async function (req, res) {
 
     const user = await userService.getUser();
 
-    return res.status(HttpStatus.OK).json({
+    res.status(HttpStatus.OK).json({
       success: true,
       message: 'Login successful',
       statusCode: HttpStatus.OK,
