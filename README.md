@@ -370,6 +370,16 @@
   npm i @types/bcrypt
   ```
   
+- Add [jwt]() for token authentication
+
+  ```bash
+  npm i jsonwebtoken
+  ```
+  
+  ```bash
+  npm i --save-dev @types/jsonwebtoken
+  ```
+  
 
 - Add [http-status-codes](https://www.npmjs.com/package/http-status-codes) for the HTTP status codes
 

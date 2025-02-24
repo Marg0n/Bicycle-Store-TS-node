@@ -19,7 +19,7 @@ const userValidationSchema = z.object({
       required_error: 'Password is required',
       invalid_type_error: 'Password is not a valid string',
     })
-    .min(6, { message: 'Password should not be less than 6 characters' })
+    .min(4, { message: 'Password should not be less than 4 characters' })
     .max(20, { message: 'Password should not be more than 20 characters' }),
 });
 

@@ -1,4 +1,4 @@
-import bycript from 'bcrypt';
+import bcrypt from 'bcrypt';
 import { model, Schema } from 'mongoose';
 import config from '../../config';
 import { IUser } from './user.interface';
@@ -60,9 +60,9 @@ userSchema.pre<IUser>('findOneAndUpdate', function (next) {
 userSchema.pre<IUser>('save', async function (next) {
   const user = this;
 
-  user.password = await bycript.hash(
+  user.password = await bcrypt.hash(
     user.password,
-    Number(config.bycript_salt_rounds),
+    Number(config.bcrypt_salt_rounds),
   );
 
   next();
