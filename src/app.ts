@@ -16,6 +16,7 @@ app.use(cookieParser());
 app.use(cors({
   origin: [
     "http://localhost:5173",
+    "https://bicyclestore.netlify.app",
   ],
   credentials: true,
 }));
