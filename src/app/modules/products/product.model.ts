@@ -34,9 +34,19 @@ const productSchema = new Schema<IProduct>(
       trim: true,
       required: [true, 'Please provide description.'],
     },
+    image:{
+      type: String,
+      trim: true,
+    },
     quantity: {
       type: Number,
       required: [true, 'Please provide exact quantity.'],
+    },
+    rating: {
+      type: Number,
+      required: [true, 'Please provide a rating.'],
+      min: [0, 'Rating cannot be less than 0.'],
+      max: [5, 'Rating cannot be more than 5.'],
     },
     inStock: {
       type: Boolean,

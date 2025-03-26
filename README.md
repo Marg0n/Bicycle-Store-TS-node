@@ -519,7 +519,9 @@
       "price": 300,
       "type": "Road",
       "description": "A premium road bike designed for speed and performance.",
+      "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg",
       "quantity": 20,
+      "rating" : 4,
       "inStock": true
     }
     ```
@@ -537,7 +539,9 @@
         "price": 300,
         "type": "Road",
         "description": "A premium road bike designed for speed and performance.",
+        "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg",
         "quantity": 20,
+        "rating" : 4,
         "inStock": true,
         "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
         "updatedAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)"
@@ -565,7 +569,9 @@
           "price": 300,
           "type": "Road",
           "description": "A premium road bike designed for speed and performance.",
+          "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg",
           "quantity": 20,
+          "rating" : 4,
           "inStock": true,
           "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
           "updatedAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)"
@@ -592,7 +598,9 @@
         "price": 300,
         "type": "Road",
         "description": "A premium road bike designed for speed and performance.",
+        "image": "https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg",
         "quantity": 20,
+        "rating" : 4,
         "inStock": true,
         "createdAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)",
         "updatedAt": "Sun Nov 24 2024 12:51:13 GMT+0600 (Bangladesh Standard Time)"
