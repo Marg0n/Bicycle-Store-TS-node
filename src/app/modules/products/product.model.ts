@@ -45,7 +45,7 @@ const productSchema = new Schema<IProduct>(
     rating: {
       type: Number,
       required: [true, 'Please provide a rating.'],
-      min: [0, 'Rating cannot be less than 0.'],
+      min: [1, 'Rating cannot be less than 0.'],
       max: [5, 'Rating cannot be more than 5.'],
     },
     inStock: {
